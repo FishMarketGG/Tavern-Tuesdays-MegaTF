@@ -523,7 +523,7 @@ function updateTicker(){
 // ── HELPERS ──
 function wkKey(d){const dt=new Date(d),day=dt.getDay();dt.setDate(dt.getDate()-day+(day===0?-6:1));const y=dt.getFullYear(),w=Math.ceil((((dt-new Date(y,0,1))/86400000)+new Date(y,0,1).getDay()+1)/7);return y+'-W'+String(w).padStart(2,'0');}
 function moKey(d){return['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]+' '+d.getFullYear();}
-function fmtD(s){return new Date(s).toLocaleDateString('en-CA',{year:'numeric',month:'short',day:'numeric'});}
+function fmtD(s){const[y,m,d]=s.split('-');return new Date(y,m-1,d).toLocaleDateString('en-CA',{year:'numeric',month:'short',day:'numeric'});}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function sh(id,h){const e=document.getElementById(id);if(e)e.innerHTML=h;}
 
