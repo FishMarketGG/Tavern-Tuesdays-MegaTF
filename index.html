@@ -487,7 +487,7 @@ async function checkLive(){
       dot.className='bdot on';txt.innerHTML='<strong style="color:var(--green)">● ONLINE</strong> — Server is live';
       btn.className='btn live online';lbl.textContent='SERVER ONLINE';mod.className='lmodal on';
     }else{
-      dot.className='bdot off';txt.innerHTML='<strong style="color:#e05040">● OFFLINE</strong> — Not detected on QuakeServers.net';
+      dot.className='bdot off';txt.innerHTML='<strong style="color:#e05040">● OFFLINE</strong> — Not detected on GameTracker';
       btn.className='btn live offline';lbl.textContent='SERVER OFFLINE';mod.className='lmodal';
     }
   }catch(e){
@@ -499,7 +499,7 @@ function openLive(){om('lModal');checkLive();}
 setTimeout(async()=>{
   const btn=document.getElementById('liveBtn'),lbl=document.getElementById('liveLbl');
   try{
-    const r=await fetch('https://api.allorigins.win/get?url='+encodeURIComponent('https://www.quakeservers.net/quakeworld/servers/'),{signal:AbortSignal.timeout(8000)});
+    const r=await fetch('https://api.allorigins.win/get?url='+encodeURIComponent('https://www.gametracker.com/server_info/147.185.221.194:56903/'),{signal:AbortSignal.timeout(8000)});
     const d=await r.json(),h=d.contents||'';
     const on=h.includes('147.185.221.194')&&h.includes('56903');
     btn.className='btn live '+(on?'online':'offline');
