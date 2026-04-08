@@ -29,7 +29,9 @@
         "FishMarket[FF]": 121,
         "Kilam": 54
       },
-      "clientHistory": {},
+      "clientHistory": {
+        "FTE 1.07": 1
+      },
       "topKilled": "FishMarket[FF]",
       "topKilledBy": "FishMarket[FF]"
     },
@@ -46,7 +48,9 @@
         "doc": 6,
         "XidCuzYes": 1
       },
-      "clientHistory": {},
+      "clientHistory": {
+        "FTE 1.07": 1
+      },
       "topKilled": "FishMarket[FF]",
       "topKilledBy": "FishMarket[FF]"
     },
